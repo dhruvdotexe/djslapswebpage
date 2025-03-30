@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Slaps - Exclusive Content</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+        })();
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        h1 { color: #FFD700; }
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            color: black;
+            background-color: #FFD700;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background-color: #FFC107;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            padding: 12px;
+            margin: 8px;
+            width: 80%;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+        }
+        button {
+            background: #FFD700;
+            color: black;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #FFC107;
+        }
+        .social-links a {
+            margin: 10px;
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .video {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to DJ Slaps' Exclusive Content!</h1>
+        <p>Get access to the latest beats, remixes, and exclusive content.</p>
+        <a href="#form" class="cta-button">Subscribe Now</a>
+
+        <div class="video">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=PL27vd-SzVps5rpzMLtq7VtGI7bzMevpXi" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <form id="form">
+            <h2>Stay Updated!</h2>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe Now</button>
+        </form>
+        
+        <div class="social-links">
+            <p>Follow me on:</p>
+            <a href="https://www.youtube.com/@djslaps" target="_blank">YouTube</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">SoundCloud</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("9IO1Ts45Uc2OXXgdT"); // Your EmailJS Public Key
+    })();
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let userName = document.getElementById('name').value;
+        let userEmail = document.getElementById('email').value;
+
+        let emailParams = {
+            name: userName,
+            email: userEmail // "To Email" field in your EmailJS template
+        };
+
+        emailjs.send("service_52gnzx9", "template_ca0j4fi", emailParams)
+            .then(function(response) {
+                alert(`Thanks, ${userName}! A confirmation email has been sent to ${userEmail}.`);
+            }, function(error) {
+                alert("Oops! Something went wrong. Please try again.");
+                console.error("EmailJS Error:", error);
+            });
+    });
+</script>
+
+
+</body>
+</html>
+
